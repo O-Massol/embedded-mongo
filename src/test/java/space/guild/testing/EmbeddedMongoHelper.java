@@ -26,7 +26,7 @@ public class EmbeddedMongoHelper {
     }
 
     private static void unzipWinMongoOnFixedPath() {
-        try (ZipInputStream zipIn = new ZipInputStream(EmbeddedMongoHelper.class.getClassLoader().getResourceAsStream("embedded-mongo/archives.zip"))) {
+        try (ZipInputStream zipIn = new ZipInputStream(EmbeddedMongoHelper.class.getClassLoader().getResourceAsStream("archives.zip"))) {
             ZipEntry entry;
             while ((entry = zipIn.getNextEntry()) != null) {
                 File filePath = new File(Path.of(FIXED_PATH).toFile(), entry.getName());
